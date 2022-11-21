@@ -1,0 +1,12 @@
+<a [routerLink]="['/'] + country.name" routerLinkActive="router-link-active">
+  <div class="detail-item">
+    <img [src]="country.flag" class="detail-image" />
+    <div class="detail-content">
+      <h6 class="title">{{country.name}}</h6>
+      <p *ngIf="country.population"><span class="label">Population: </span>{{country.population|number}}</p>
+      <p *ngIf="country.region"><span class="label">Region: </span>{{country.region}}</p>
+      <p *ngIf="country.capital"><span class="label">Capital: </span>{{country.capital}}</p>
+
+    </div>
+  </div>
+</a>
