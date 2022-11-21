@@ -16,7 +16,6 @@ export class CountryListComponent implements OnInit {
     source: Country[];
     regionFilter?: string;
     regionOptions = REGION;
-    // countries$: Observable<Country[]>;
 
   constructor(private apiService: ApiService) { }
 

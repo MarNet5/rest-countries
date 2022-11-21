@@ -1,0 +1,10 @@
+<div class="dropdown shadow">
+  <div class="dropdown-label" (click)="changeOptions()">
+    <span>{{placeholder}}</span>
+  </div>
+  <ul *ngIf="flag" class="dropdown-options shadow">
+    <li *ngFor="let value of values" (click)="select(value)">
+      {{ value }}
+    </li>
+  </ul>
+</div>

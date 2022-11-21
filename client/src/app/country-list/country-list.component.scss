@@ -7,15 +7,29 @@
   margin: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  @media (min-width: 376px){
+  @media (min-width: 876px){
     margin: 2rem 5rem;
     flex-direction: row;
     justify-content: space-between;
   }
-  app-dropdown{
+  app-country-filter{
     width: 60%;
-    @media (min-width: 376px){
+    @media (min-width: 876px){
       width: 25%;
     }
+  }
+}
+.search-filter {
+  font-size: 1rem;
+  padding: 0.25rem;
+  @media (min-width: 876px){
+    width: 33%;
+  }
+  span {
+    padding-right: 0.5rem;
+  }
+  input {
+    border: none;
+    background-color: inherit;
   }
 }
