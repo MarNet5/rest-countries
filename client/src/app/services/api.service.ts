@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Country } from '../models/country';
+import { map } from 'rxjs/operators';
 
 
 
@@ -19,4 +20,10 @@ export class ApiService {
     const url = `${environment.baseUrl}/all`;
     return this.http.get<Country[]>(url);
    }
+   getCountryByName(name: string){
+    const url = `${environment.baseUrl}/name/${name}`
+    return this.http.get<Country[]>(url, {params: {name: name}}).pipe(
+      map(([ res ]) => res)
+    );
+  }
 }

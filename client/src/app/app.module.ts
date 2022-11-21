@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CountryDetailComponent } from './country-detail/country-detail.component';
+import { CountryCardComponent } from './country-card/country-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CountryListComponent,
-    CountryDetailComponent
+    CountryDetailComponent,
+    CountryCardComponent
   ],
   imports: [
     BrowserModule,

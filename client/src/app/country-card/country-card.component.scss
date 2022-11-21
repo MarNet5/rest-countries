@@ -1,0 +1,58 @@
+.country {
+  padding: 1rem;
+  @media (min-width: 376px) {
+    padding: 5rem;
+  }
+  img {
+    width: 100%;
+  }
+  h3 {
+    padding-top: 2rem;
+    @media (min-width: 376px) {
+      font-size: 1.5rem;
+    }
+  }
+  button {
+    padding: 0.5rem 2rem;
+    margin-bottom: 4rem;
+  }
+  p {
+    padding: 0.5rem 0;
+  }
+
+  &-layout {
+    @media (min-width: 376px) {
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: 40%;
+      }
+    }
+  }
+
+  &-detail {
+    @media (min-width: 376px) {
+      width: 50%;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 376px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &-section {
+    padding: 1rem 0;
+  }
+
+
+
+}
+.button {
+  border: none;
+  font-size: 1rem;
+}
