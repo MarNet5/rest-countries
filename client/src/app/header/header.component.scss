@@ -1,0 +1,11 @@
+.header {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  margin: 2rem 0;
+}
+h1 {
+  font-size: 1.2 rem;
+  font-weight: bold;
+  @media (min-width: 768px){
+    font-size: 1.8rem;
+  }
+}
