@@ -1,4 +1,4 @@
-<a [routerLink]="['/'] + country.name" routerLinkActive="router-link-active">
+<a *ngIf="country" [routerLink]="['/'] + country.name" routerLinkActive="router-link-active">
   <div class="detail-item">
     <img [src]="country.flag" class="detail-image" />
     <div class="detail-content">

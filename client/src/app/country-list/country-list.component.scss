@@ -3,3 +3,19 @@
   gap: 4rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+.country-filters{
+  margin: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 376px){
+    margin: 2rem 5rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  app-dropdown{
+    width: 60%;
+    @media (min-width: 376px){
+      width: 25%;
+    }
+  }
+}

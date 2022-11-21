@@ -1,5 +1,10 @@
 <div class="container mt-5">
-  <div class="details">
-    <app-country-detail *ngFor="let country of countries$|async" [country]="country"></app-country-detail>
+  <div class="country-filters">
+      <input type="text" placeholder="Search for country..." [(ngModel)]="searchFilter">
   </div>
+
+  <div class="details">
+    <app-country-detail *ngFor="let country of countries" [country]="country"></app-country-detail>
+  </div>
+
 </div>

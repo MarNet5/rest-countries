@@ -8,6 +8,7 @@ import { CountryListComponent } from './country-list/country-list.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { CountryCardComponent } from './country-card/country-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CountryCardComponent } from './country-card/country-card.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,8 +1,7 @@
 .detail-item{
   height: 100%;
   max-width: 350px;
-  background-color: var(--elements-color);
-  // background-color: red;
+  background-color: hsl(0, 0%, 100%);
   border-radius: 0.5rem;
   .detail-image {
     border-top-left-radius: calc(0.5rem - 2px);
