@@ -5,6 +5,10 @@
   }
   img {
     width: 100%;
+    @media (min-width: 80px) {
+      width: 50%;
+      height: 40%;
+    }
   }
   h3 {
     padding-top: 2rem;
@@ -19,7 +23,6 @@
   p {
     padding: 0.5rem 0;
   }
-
   &-layout {
     @media (min-width: 376px) {
       display: flex;
@@ -29,13 +32,11 @@
       }
     }
   }
-
   &-detail {
     @media (min-width: 376px) {
       width: 50%;
     }
   }
-
   &-info {
     display: flex;
     flex-direction: column;
@@ -44,15 +45,29 @@
       justify-content: space-between;
     }
   }
-
   &-section {
     padding: 1rem 0;
   }
+  .border-countries {
+    margin-bottom: 4rem;
 
+    &-buttons {
+      display: grid;
+      column-gap: 0.5rem;
+      row-gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 2rem;
 
-
+      .button {
+        text-align: center;
+        line-height: 2rem;
+      }
+    }
+  }
 }
 .button {
   border: none;
   font-size: 1rem;
+  background-color: hsl(0, 0%, 100%);;
+  color: hsl(200, 15%, 8%);
 }

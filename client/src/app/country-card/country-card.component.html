@@ -46,6 +46,17 @@
           </p>
         </div>
       </div>
+        <div class="border-countries">
+          <p><strong>Border Countries:</strong></p>
+
+          <div *ngIf="borderCountries$ | async; let borderCountries" class="border-countries-buttons">
+
+
+              <div *ngFor="let borderCountry of borderCountries" class="button shadow" [routerLink]="'/' + borderCountry.name">
+                {{ borderCountry.name }}
+              </div>
+            </div>
+          </div>
 
     </div>
   </div>

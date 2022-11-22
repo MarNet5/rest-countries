@@ -5,8 +5,6 @@ import { environment } from 'src/environments/environment';
 import { Country } from '../models/country';
 import { map } from 'rxjs/operators';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +13,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCountries(): Observable<Country[]> {
+  getAllCountries() {
 
     const url = `${environment.baseUrl}/all`;
     return this.http.get<Country[]>(url);
@@ -25,5 +23,11 @@ export class ApiService {
     return this.http.get<Country[]>(url, {params: {name: name}}).pipe(
       map(([ res ]) => res)
     );
+  }
+   getCountryByCode(codes: string[] ){
+
+    const url = `${environment.baseUrl}/${codes}`
+
+    return this.http.get<Country[]>(url, {params: {codes: codes}});
   }
 }

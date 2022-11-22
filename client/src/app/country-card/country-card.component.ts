@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, of, tap } from 'rxjs';
+import { Observable, of, tap, mergeMap } from 'rxjs';
 import { ApiService } from '../services/api.service';
 import { Country, Currency, Language } from '../models/country';
 
@@ -11,15 +11,19 @@ import { Country, Currency, Language } from '../models/country';
 })
 export class CountryCardComponent implements OnInit {
   country$: Observable<Country>;
+  borderCountries$: Observable<Country[]>;
 
   constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.country$ = this.apiService.getCountryByName(params.country).pipe(
-        tap(
-          (res) => console.log(res),
+    this.route.params.subscribe((params) => {
+      this.country$ = this.apiService.getCountryByName(params.country)
+      .pipe(tap((res) => console.log(res),
       ),
+      mergeMap((res: any) => {
+        this.borderCountries$ = this.apiService.getCountryByCode(res.borders);
+        return of(res);
+      })
       );
     });
 

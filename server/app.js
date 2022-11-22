@@ -46,7 +46,6 @@ const fetch = (...args) =>
             .then(json => console.log(json))
             .catch(err => console.error('error:' + err));
             try {
-                // console.log("here is a call on url: ", url);
                 let response = await fetch(url, options);
                 response = await response.json();
                 res.status(200).json(response);
@@ -56,6 +55,28 @@ const fetch = (...args) =>
             }
         });
    
+
+        app.get(`/:codes`, async function (req, res){
+            let codes = req.params.codes;
+            const url =  `https://restcountries.com/v2/alpha?codes=${codes}`;
+        
+            const options = {
+                method: 'GET',
+                mode: 'cors'
+            };
+            fetch(url, options)
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error('error:' + err));
+                try {
+                    let response = await fetch(url, options);
+                    response = await response.json();
+                    res.status(200).json(response);
+                } catch (err) {
+                    console.log(err);
+                    res.status(500).json({msg: `Internal Server Error.`});
+                }
+            });
     app.listen(3000, () => {
         console.log("Listen on the port 3000...");
     });
