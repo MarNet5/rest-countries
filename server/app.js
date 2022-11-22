@@ -1,6 +1,7 @@
 const express = require("express");
 
 const app = express();
+const cache = require('./routeCache');
 
 const fetch = (...args) =>
 	import('node-fetch').then(({default: fetch}) => fetch(...args));
@@ -9,8 +10,9 @@ const fetch = (...args) =>
         res.header('Access-Control-Allow-Origin', '*');
         next();
       });
+    //cache time in seconds
 
-    app.get(`/all`, async function (req, res){
+    app.get(`/all`, cache(1200), async function (req, res){
         
     const url = "https://restcountries.com/v2/all";
 
@@ -25,14 +27,14 @@ const fetch = (...args) =>
         try {
             let response = await fetch(url, options);
             response = await response.json();
-            console.log("response: ", response);
+            // console.log("response: ", response);
             res.status(200).json(response);
         } catch (err) {
             console.log(err);
             res.status(500).json({msg: `Internal Server Error.`});
         }
     });
-    app.get(`/name/:name`, async function (req, res){
+    app.get(`/name/:name`, cache(1200), async function (req, res){
         let name = req.params.name;
         console.log("req:", req)
         const url =  `https://restcountries.com/v2/name/${name}`;
@@ -56,7 +58,7 @@ const fetch = (...args) =>
         });
    
 
-        app.get(`/:codes`, async function (req, res){
+        app.get(`/:codes`, cache(1200), async function (req, res){
             let codes = req.params.codes;
             const url =  `https://restcountries.com/v2/alpha?codes=${codes}`;
         
