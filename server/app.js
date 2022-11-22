@@ -1,4 +1,5 @@
 const express = require("express");
+const { default: mongoose } = require("mongoose");
 
 const app = express();
 const cache = require('./routeCache');
@@ -79,6 +80,14 @@ const fetch = (...args) =>
                     res.status(500).json({msg: `Internal Server Error.`});
                 }
             });
+
+    // mongoose.connect(db_url);
+    mongoose.connection.once('open', function(){
+        console.log('Database connected')
+    }).on('error', function(err){
+        console.log('Error: ', err)
+    })
+
     app.listen(3000, () => {
         console.log("Listen on the port 3000...");
     });

@@ -24,12 +24,12 @@ The user should be able to:
 
 
 ## Usage
-1. Locate to the server folder
+1. Locate to the `server` folder
 2. Install NPM packages
     `npm install`
 3. Start the server
     `npm start`
-4. Open the new terminal tab and locate to the client folder
+4. Open the new terminal tab and locate to the `client` folder
 5. Install packages
     `npm install`
 6. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
