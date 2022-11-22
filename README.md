@@ -29,16 +29,18 @@ The user should be able to:
     `npm install`
 3. Start the server
     `npm start`
-4. Locate to the client folder
-2. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+4. Open the new terminal tab and locate to the client folder
+5. Install packages
+    `npm install`
+6. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Contributing
 If you have a suggestions that would make this better, please fork the repo and create a pull request.
 1. Fork the project
 2. Create feature branch
-    git checkout -b feature/MyFeature
+    `git checkout -b feature/MyFeature`
 3. Commit changes
-    git commit -m"Add feature"
+    `git commit -m"Add feature"`
 4. Push to the brach
-    git push origin feature/MyFeature
+    `git push origin feature/MyFeature`
 5. Open a pull request

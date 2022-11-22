@@ -10,8 +10,8 @@ const fetch = (...args) =>
         res.header('Access-Control-Allow-Origin', '*');
         next();
       });
-    //cache time in seconds
-
+    
+      //cache time in seconds
     app.get(`/all`, cache(1200), async function (req, res){
         
     const url = "https://restcountries.com/v2/all";
